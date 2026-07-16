@@ -2,32 +2,57 @@
    Global Styles
    ========================================= */
 body {
-  background-color: #ffffff;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  color: #333333;
+    background-color: floralwhite;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333333;
 }
 
 /* =========================================
    Navbar
    ========================================= */
 .navbar {
-  height: 60px;
-  z-index: 1030;
+    height: 80px;
+    z-index: 1030;
+    background-color: floralwhite;
 }
-
+.navbar-brand {
+    color: #a55166;
+}
 /* =========================================
    Sidebar
    ========================================= */
 .sidebar {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  width: 220px;
-  height: calc(100vh - 60px);
-  overflow-y: auto;
-  z-index: 1020;
+    position: fixed;
+    top: 80px;
+    right: -220px;
+    transition: right 0.3s ease;
+    width: 220px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    z-index: 1020;
+    background-color: floralwhite;
 }
-
+.nav-link {
+    color: #a55166;
+}
+.main-btn {
+    position: fixed;
+    top: 0;
+    right: 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1040;
+    font-size: 28px;
+    cursor: pointer;
+    color: #a55166;
+    background: transparent;
+}
+    .main-btn:hover + .sidebar,
+    .sidebar:hover {
+        right: 0;
+    }
 .sidebar .nav-link {
   border-radius: 12px;
   padding: 10px 14px;
@@ -42,21 +67,22 @@ body {
    Main Content
    ========================================= */
 .main-content {
-  margin-left: 220px;
-  margin-top: 60px;
-  padding: 30px;
+    margin-left: 2px;
+    margin-top: 80px;
+    padding: 0px;
+    z-index: 1020
 }
 
 /* =========================================
    Hero Section
    ========================================= */
 .hero {
-  background-image: url('../images/hero-placeholder.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 420px;
-  padding: 40px;
-  position: relative;
+    background-image: url('../images/main.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: calc(100vh - 60px);
+    padding: 40px;
+    position: relative;
 }
 
 .hero::before {
@@ -66,7 +92,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: inherit;
 }
 
@@ -74,33 +100,237 @@ body {
   position: relative;
   z-index: 1;
 }
-
+.mb-4 {
+    color: #a55166;
+    font:bold;
+    margin-bottom:20px;
+}
+.row.g-4 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
 /* =========================================
    Cards
    ========================================= */
 .card {
-  background-color: #f8f9fa;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #f8f9fa;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 0 !important;
+    max-width: 280px;
+    margin: auto;
 }
-
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-bottom: 10px;
+}
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
 }
 
 .card-img-top {
-  height: 160px;
-  object-fit: cover;
-  background-color: #e9ecef;
+    height: 160px;
+    object-fit: cover;
+    background-color: #e9ecef;
+    border-radius: 0 !important;
+}
+.card .btn {
+    width: 100%;
+    background-color: #a55166;
+    color: floralwhite;
+    border: none;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+.sale-section {
+    min-height: 100vh;
+    background: #faafb2; 
+    padding: 80px 50px;
+    margin-bottom:40px;
 }
 
-/* =========================================
-   Featured Section
-   ========================================= */
-.featured img {
-  object-fit: cover;
+.sale-content {
+    padding: 40px;
+}
+sale-content h4 {
+color: #a55166;
+letter-spacing: 3px;
+font-weight: 600;
 }
 
+.sale-content h1 {
+font-size: 70px;
+font-weight: 800;
+margin: 20px 0;
+}
+.sale-content h2 {
+font-size: 42px;
+font-weight: 700;
+}
+.sale-content span {
+color: #a55166;
+}
+
+.sale-content p {
+max-width: 400px;
+margin: 30px 0;
+font-size: 18px;
+color: #555;
+}
+
+.sale-btn {
+    background: #a55166;
+    color: floralwhite;
+    padding: 15px 45px;
+    border: none;
+    border-radius: 8px;
+}
+
+.sale-btn:hover {
+background: #8d4458;
+ color: white;
+}
+
+.sale-img {
+    max-height: 400px;
+    object-fit: contain;
+}
+#carouselExampleCaptions {
+    max-width: 900px;
+    margin: 50px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+.carousel-item {
+    height: 450px;
+}
+.carousel-item img {
+height: 100%;
+width: 100%;
+object-fit: cover;
+}
+.carousel-link {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+    .carousel-link:hover {
+        text-decoration: underline;
+    }
+
+.reviews-section {
+    background: #fff7f5;
+}
+
+.review-stack {
+    position: relative;
+    width: 360px;
+    height: 320px;
+    margin: auto;
+}
+
+.review-card {
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+    .review-card:nth-child(1) {
+        top: 0;
+        z-index: 3;
+    }
+
+    .review-card:nth-child(2) {
+        top: 18px;
+        left: 18px;
+        z-index: 2;
+    }
+
+    .review-card:nth-child(3) {
+        top: 36px;
+        left: 36px;
+        z-index: 1;
+    }
+
+.review-stack:hover .review-card:nth-child(1) {
+    transform: translateY(-10px);
+}
+
+.review-card:hover {
+    transform: translate(-10px,-10px) scale(1.02);
+    z-index: 10;
+}
+
+
+
+/* Contact Section */
+.contact-section {
+    background: #fff7f5;
+    padding: 80px 20px;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+}
+
+    .contact-form h2 {
+        color: #a55166;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .contact-form p {
+        color: #777;
+        margin-bottom: 30px;
+    }
+
+    .contact-form .form-label {
+        color: #a55166;
+        font-weight: 600;
+    }
+
+    .contact-form .form-control {
+        border: 1px solid #f0c4cf;
+        border-radius: 12px;
+        padding: 12px;
+        box-shadow: none;
+    }
+
+        .contact-form .form-control:focus {
+            border-color: #a55166;
+            box-shadow: 0 0 0 .2rem rgba(165,81,102,.2);
+        }
+
+.contact-btn {
+    width: 100%;
+    background: #a55166;
+    color: floralwhite;
+    padding: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+    .contact-btn:hover {
+        background: #8f4357;
+        color: white;
+    }
 /* =========================================
    Footer
    ========================================= */
